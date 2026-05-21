@@ -66,7 +66,7 @@ export default function Home() {
         width={180}
         height={80}
         priority
-        className="h-auto w-[135px] md:w-[165px]"
+        className="h-auto w-[120px] md:w-[165px]"
       />
     </div>
 
@@ -75,7 +75,7 @@ export default function Home() {
 
       <a
         href="#menu"
-        className="rounded-full px-6 py-2.5 text-base font-medium text-gray-700 transition hover:bg-green-100 hover:text-green-700 hover:scale-105"
+        className="rounded-full px-3 py-1.5 text-xs md:px-6 md:py-2.5 md:text-sm text-base font-medium text-gray-700 transition hover:bg-green-100 hover:text-green-700 hover:scale-105"
       >
         Menu
       </a>
@@ -99,7 +99,7 @@ export default function Home() {
     <a
       href="https://wa.me/916002026780?text=Hi%20Fresh%209%20🌿%20I%20would%20like%20to%20know%20more%20about%20healthy%20breakfast%20plans."
       target="_blank"
-      className="shrink-0 rounded-full bg-green-700 px-3 py-2 text-xs text-white md:px-5 md:py-3 md:text-sm"
+      className="hidden shrink-0 rounded-full bg-green-700 px-3 py-2 text-xs text-white md:block md:px-5 md:py-3 md:text-sm"
     >
       Start Your Morning 🌿
     </a>
