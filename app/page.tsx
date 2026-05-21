@@ -56,7 +56,7 @@ export default function Home() {
       {/* Premium Navbar */}
 <header className="fixed top-5 left-1/2 z-50 w-[92%] max-w-7xl -translate-x-1/2">
   
-  <div className="flex items-center justify-between rounded-full border border-white/30 bg-white/70 px-5 py-2 shadow-xl backdrop-blur-xl md:px-6">
+  <div className="flex items-center justify-between gap-2 rounded-full border border-white/30 bg-white/70 px-3 py-2 shadow-xl backdrop-blur-xl md:px-6">
 
     {/* Logo */}
     <div className="flex items-center">
@@ -99,7 +99,7 @@ export default function Home() {
     <a
       href="https://wa.me/916002026780?text=Hi%20Fresh%209%20🌿%20I%20would%20like%20to%20know%20more%20about%20healthy%20breakfast%20plans."
       target="_blank"
-      className="rounded-full bg-green-700 px-4 py-3 text-sm text-white"
+      className="shrink-0 rounded-full bg-green-700 px-3 py-2 text-xs text-white md:px-5 md:py-3 md:text-sm"
     >
       Start Your Morning 🌿
     </a>
