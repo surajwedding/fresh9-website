@@ -71,7 +71,7 @@ export default function Home() {
     </div>
 
     {/* Desktop Navigation */}
-    <nav className="hidden items-center rounded-full bg-white/90 px-2 py-2 shadow-inner md:flex">
+    <nav className="flex items-center rounded-full bg-white/90 px-2 py-2 shadow-inner">
 
       <a
         href="#menu"
@@ -99,15 +99,13 @@ export default function Home() {
     <a
       href="https://wa.me/916002026780?text=Hi%20Fresh%209%20🌿%20I%20would%20like%20to%20know%20more%20about%20healthy%20breakfast%20plans."
       target="_blank"
-      className="hidden rounded-full bg-green-700 px-7 py-4 text-base font-medium text-white shadow-lg transition hover:scale-110 hover:bg-green-800 md:flex"
+      className="rounded-full bg-green-700 px-4 py-3 text-sm text-white"
     >
       Start Your Morning 🌿
     </a>
 
     {/* Mobile Menu Placeholder */}
-    <button className="rounded-full bg-green-100 p-3 md:hidden">
-      <Menu className="h-5 w-5 text-green-700" />
-    </button>
+    
   </div>
 </header>
 
