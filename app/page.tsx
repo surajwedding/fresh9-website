@@ -444,11 +444,11 @@ export default function Home() {
         transition={{ duration: 0.3 }}
         className="group relative overflow-hidden rounded-[36px] border-2 border-green-700 bg-white p-8 shadow-xl"
       >
-        <div className="absolute right-5 top-3 rounded-full bg-green-700 px-4 py-2 text-sm font-medium text-white">
+        <div className="absolute right-4 top-4 rounded-full bg-green-700 px-3 py-2 text-xs font-medium text-white md:right-5 md:top-5 md:px-4 md:text-sm">
           Most Popular ⭐
         </div>
 
-        <div className="mb-5 inline-flex rounded-full bg-orange-100 px-4 py-2 text-sm font-medium text-orange-700">
+        <div className="mb-8 mt-10 inline-flex rounded-full bg-orange-100 px-4 py-2 text-sm font-medium text-orange-700 md:mt-0">
           Filling & Energizing ⚡
         </div>
 
