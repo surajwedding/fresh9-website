@@ -66,30 +66,30 @@ export default function Home() {
         width={180}
         height={80}
         priority
-        className="h-auto w-[120px] md:w-[165px]"
+        className="h-auto w-[155px] md:w-[175px]"
       />
     </div>
 
     {/* Desktop Navigation */}
-    <nav className="flex items-center rounded-full bg-white/90 px-2 py-2 shadow-inner">
+    <nav className="flex items-center gap-3 rounded-full bg-white/90 px-2 py-2 shadow-inner">
 
       <a
         href="#menu"
-        className="rounded-full px-3 py-1.5 text-xs md:px-6 md:py-2.5 md:text-sm text-base font-medium text-gray-700 transition hover:bg-green-100 hover:text-green-700 hover:scale-105"
+        className="rounded-full px-3 py-1.5 text-[15px] font-medium uppercase text-gray-700 transition hover:bg-green-100 hover:text-green-700 hover:scale-105 md:px-6 md:py-2.5 md:text-sm"
       >
         Menu
       </a>
 
       <a
         href="#subscription"
-        className="rounded-full px-7 py-3 text-base font-medium text-gray-700 transition hover:bg-green-100 hover:text-green-700 hover:scale-105"
+        className="rounded-full px-3 py-1.5 text-[15px] font-medium uppercase text-gray-700 transition hover:bg-green-100 hover:text-green-700 hover:scale-105 md:px-6 md:py-2.5 md:text-sm"
       >
-        Plans
+        PLANS
       </a>
 
       <a
         href="#faq"
-        className="rounded-full px-7 py-3 text-base font-medium text-gray-700 transition hover:bg-green-100 hover:text-green-700 hover:scale-105"
+        className="rounded-full px-3 py-1.5 text-[15px] font-semibold uppercase text-gray-700 transition hover:bg-green-100 hover:text-green-700 hover:scale-105 md:px-6 md:py-2.5 md:text-sm"
       >
         FAQ
       </a>
@@ -239,7 +239,7 @@ export default function Home() {
       {/* Item 1 */}
       <motion.div
         whileHover={{ y: -5 }}
-        className="flex items-center justify-center gap-3 rounded-[24px] bg-[#F8FFF8] px-5 py-5 transition"
+        className="flex items-center justify-center gap-4 rounded-[24px] bg-[#F8FFF8] px-5 py-5 transition"
       >
         <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-100 text-2xl">
           🌿
@@ -662,7 +662,7 @@ export default function Home() {
 >
   <div className="mx-auto max-w-4xl text-center">
 
-    <span className="rounded-full bg-green-100 px-5 py-2 text-sm font-medium text-green-700">
+    <span className="rounded-full bg-green-100 px-5 py-2 text-[15px] font-medium text-green-700">
       FAQ 🌿
     </span>
 
@@ -853,7 +853,7 @@ export default function Home() {
 <a
   href="https://wa.me/916002026780?text=Hi%20Fresh%209%20🌿%20I%20would%20like%20to%20know%20more%20about%20healthy%20breakfast%20plans."
   target="_blank"
-  className="fixed bottom-6 right-6 z-50 rounded-full bg-[#25D366] p-5 shadow-2xl hover:scale-110 transition"
+  className="fixed bottom-8 right-6 z-50 rounded-full bg-[#25D366] p-5 shadow-2xl hover:scale-110 transition"
 >
   <FaWhatsapp className="text-white text-[34px]" />
 </a>
@@ -888,7 +888,7 @@ height={70}
 
       <div className="mt-5 flex flex-col gap-3 text-gray-300">
         <a href="#menu" className="hover:text-green-400 transition">
-          Menu
+          MENU
         </a>
 
         <a href="#subscription" className="hover:text-green-400 transition">
