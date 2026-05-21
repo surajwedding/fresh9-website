@@ -775,9 +775,13 @@ export default function Home() {
           Sunday Off
         </p>
 
-        <button className="mt-8 w-full rounded-full bg-green-700 py-3 text-white hover:bg-green-800 transition">
-          Choose Plan
-        </button>
+        <a
+  href="https://wa.me/916002026780?text=Hi%20Fresh%209%20🌿%20I%20am%20interested%20in%20the%207%20Day%20Trial%20Plan."
+  target="_blank"
+  className="mt-8 block w-full rounded-full bg-green-700 py-3 text-center text-white transition hover:bg-green-800"
+>
+  Choose Plan
+</a>
       </motion.div>
 
       {/* 15 Day */}
