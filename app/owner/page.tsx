@@ -108,7 +108,29 @@ export default function OwnerPage() {
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
           {/* Header */}
-<div className="flex flex-col md:flex-row justify-between md:items-center mb-8 gap-4">
+<div className="flex justify-between items-start mb-8">
+  
+  <div>
+    <h1 className="text-4xl font-bold text-green-600">
+      🌿 Fresh 9 Dashboard
+    </h1>
+
+    <p className="text-lg text-gray-500 mt-2">
+      Good Afternoon, Suraj 🌿
+    </p>
+
+    <p className="text-gray-400">
+      Fresh Before 9
+    </p>
+  </div>
+
+  <button
+    onClick={fetchDashboardData}
+    className="bg-green-600 text-white px-6 py-3 rounded-2xl shadow-md hover:bg-green-700 transition"
+  >
+    Refresh ↻
+  </button>
+</div>
   <div>
     <h1 className="text-4xl font-bold text-green-600">
       🌿 Fresh 9 Dashboard
