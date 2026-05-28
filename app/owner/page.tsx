@@ -40,7 +40,11 @@ export default function OwnerPage() {
   };
 
   useEffect(() => {
-  pinInputRef.current?.focus();
+  const timer = setTimeout(() => {
+    pinInputRef.current?.focus();
+  }, 200);
+
+  return () => clearTimeout(timer);
 }, []);
   useEffect(() => {
     if (accessGranted) {
