@@ -3,7 +3,6 @@
 import {
   useEffect,
   useState,
-  useRef
 } from "react";
 
 export default function OwnerPage() {
@@ -13,8 +12,7 @@ export default function OwnerPage() {
   const [loading, setLoading] = useState(false);
 
   const [dashboardData, setDashboardData] 
-  const pinInputRef =
-  useRef<HTMLInputElement>(null);=
+  =
     useState<any>(null);
     const [searchTerm, setSearchTerm] =
   useState("");
@@ -76,21 +74,21 @@ export default function OwnerPage() {
             </p>
 
             <input
-            ref={pinInputRef}
-              type="password"
-              onKeyDown={(e) => {
-  if (e.key === "Enter") {
-    handleAccess();
+  autoFocus
+  type="password"
+  onKeyDown={(e) => {
+    if (e.key === "Enter") {
+      handleAccess();
+    }
+  }}
+  placeholder="Enter 6-digit PIN"
+  value={pin}
+  onChange={(e) =>
+    setPin(e.target.value)
   }
-}}
-              placeholder="Enter 6-digit PIN"
-              value={pin}
-              onChange={(e) =>
-                setPin(e.target.value)
-              }
-              className="w-full border border-gray-200 rounded-2xl px-5 py-4 text-center text-xl outline-none focus:ring-2 focus:ring-green-500"
-              maxLength={6}
-            />
+  className="w-full border border-gray-200 rounded-2xl px-5 py-4 text-center text-xl outline-none focus:ring-2 focus:ring-green-500"
+  maxLength={6}
+/>
 
             {error && (
               <p className="text-red-500 mt-3 text-sm">
