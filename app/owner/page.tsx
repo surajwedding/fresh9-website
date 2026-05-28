@@ -11,7 +11,7 @@ export default function OwnerPage() {
   const [dashboardData, setDashboardData] =
     useState<any>(null);
 
-  const correctPin = "2409";
+  const correctPin = "786614";
 
   const API_URL =
     "https://script.google.com/macros/s/AKfycbw-PtFt3qW36FokhDYxGMqJSWEoRlZQxKsOvPh6vJtZuAsSkB1d3gnWGU3F4tZmCm-b/exec";
