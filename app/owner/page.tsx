@@ -3,6 +3,7 @@
 import {
   useEffect,
   useState,
+  useRef
 } from "react";
 
 export default function OwnerPage() {
@@ -11,11 +12,14 @@ export default function OwnerPage() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const [dashboardData, setDashboardData] 
-  =
-    useState<any>(null);
-    const [searchTerm, setSearchTerm] =
+  const [dashboardData, setDashboardData] =
+  useState<any>(null);
+
+const [searchTerm, setSearchTerm] =
   useState("");
+
+const pinInputRef =
+  useRef<HTMLInputElement>(null);
 
   const correctPin = "786614";
 
@@ -37,13 +41,7 @@ export default function OwnerPage() {
     }
   };
 
-  useEffect(() => {
-  const timer = setTimeout(() => {
-    pinInputRef.current?.focus();
-  }, 200);
-
-  return () => clearTimeout(timer);
-}, []);
+  
   useEffect(() => {
     if (accessGranted) {
       fetchDashboardData();
@@ -74,7 +72,7 @@ export default function OwnerPage() {
             </p>
 
             <input
-  autoFocus
+  ref={pinInputRef}
   type="password"
   onKeyDown={(e) => {
     if (e.key === "Enter") {
@@ -135,6 +133,15 @@ export default function OwnerPage() {
 
   <button
     onClick={fetchDashboardData}
+    useEffect(() => {
+  if (!accessGranted) {
+    const timer = setTimeout(() => {
+      pinInputRef.current?.focus();
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }
+}, [accessGranted]);
     className="bg-green-600 text-white px-6 py-3 rounded-2xl shadow-md hover:bg-green-700 transition"
   >
     Refresh ↻
