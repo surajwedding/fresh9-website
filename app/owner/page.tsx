@@ -178,82 +178,6 @@ export default function OwnerPage() {
                 </h2>
               </div>
             </div>
-{/* Customer Search */}
-<div className="bg-white rounded-[30px] shadow-md p-6 mb-8">
-  <h2 className="text-2xl font-bold text-green-600 mb-5">
-    🔍 Search Customer
-  </h2>
-
-  <input
-    type="text"
-    placeholder="Search by name or phone..."
-    value={searchTerm}
-    onChange={(e) =>
-      setSearchTerm(e.target.value)
-    }
-    className="w-full border border-gray-200 rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-green-500"
-  />
-
-  <div className="mt-5 space-y-4">
-
-    {dashboardData?.customerData
-      ?.filter((customer: any) =>
-        customer.name
-          .toLowerCase()
-          .includes(
-            searchTerm.toLowerCase()
-          ) ||
-        customer.phone
-          ?.toString()
-          .includes(searchTerm)
-      )
-      .slice(0, 5)
-      .map(
-        (
-          customer: any,
-          index: number
-        ) => (
-          <div
-            key={index}
-            className="bg-green-50 rounded-3xl p-5"
-          >
-            <h3 className="text-xl font-bold">
-              {customer.name}
-            </h3>
-
-            <p className="text-gray-600 mt-2">
-              📞 {customer.phone}
-            </p>
-
-            <p>
-              📍 {customer.area}
-            </p>
-
-            <p>
-              🥤 {customer.plan}
-            </p>
-
-            <p>
-              ⏳{" "}
-              {customer.daysRemaining} Days
-              Left
-            </p>
-
-            <p>
-              💰{" "}
-              {customer.paymentStatus}
-            </p>
-
-            {customer.notes && (
-              <p className="mt-2 text-sm text-gray-600">
-                📝 {customer.notes}
-              </p>
-            )}
-          </div>
-        )
-      )}
-  </div>
-</div>
             {/* Bottom Cards */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-8">
 
@@ -378,6 +302,84 @@ export default function OwnerPage() {
             </div>
           </>
         )}
+        {/* Customer Search */}
+<div className="bg-white rounded-[30px] shadow-md p-6 mb-8">
+  <h2 className="text-2xl font-bold text-green-600 mb-5">
+    🔍 Search Customer
+  </h2>
+
+  <input
+    type="text"
+    placeholder="Search by name or phone..."
+    value={searchTerm}
+    onChange={(e) =>
+      setSearchTerm(e.target.value)
+    }
+    className="w-full border border-gray-200 rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-green-500"
+  />
+
+  <div className="mt-5 space-y-4">
+
+    {searchTerm &&
+dashboardData?.customerData
+      ?.filter((customer: any) =>
+        customer.name
+          .toLowerCase()
+          .includes(
+            searchTerm.toLowerCase()
+          ) ||
+        customer.phone
+          ?.toString()
+          .includes(searchTerm)
+      )
+      .slice(0, 5)
+      .map(
+        (
+          customer: any,
+          index: number
+        ) => (
+          <div
+            key={index}
+            className="bg-green-50 rounded-3xl p-5"
+          >
+            <h3 className="text-xl font-bold">
+              {customer.name}
+            </h3>
+
+            <p className="text-gray-600 mt-2">
+              📞 {customer.phone}
+            </p>
+
+            <p>
+              📍 {customer.area}
+            </p>
+
+            <p>
+              🥤 {customer.plan}
+            </p>
+
+            <p>
+              ⏳{" "}
+              {customer.daysRemaining} Days
+              Left
+            </p>
+
+            <p>
+              💰{" "}
+              {customer.paymentStatus}
+            </p>
+
+            {customer.notes && (
+              <p className="mt-2 text-sm text-gray-600">
+                📝 {customer.notes}
+              </p>
+            )}
+          </div>
+        )
+            )}
+  </div>
+</div>
+
       </div>
     </div>
   );
