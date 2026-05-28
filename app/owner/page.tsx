@@ -1,6 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import {
+  useEffect,
+  useState,
+  useRef
+} from "react";
 
 export default function OwnerPage() {
   const [pin, setPin] = useState("");
@@ -8,7 +12,9 @@ export default function OwnerPage() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const [dashboardData, setDashboardData] =
+  const [dashboardData, setDashboardData] 
+  const pinInputRef =
+  useRef<HTMLInputElement>(null);=
     useState<any>(null);
     const [searchTerm, setSearchTerm] =
   useState("");
@@ -33,6 +39,9 @@ export default function OwnerPage() {
     }
   };
 
+  useEffect(() => {
+  pinInputRef.current?.focus();
+}, []);
   useEffect(() => {
     if (accessGranted) {
       fetchDashboardData();
@@ -63,6 +72,7 @@ export default function OwnerPage() {
             </p>
 
             <input
+            ref={pinInputRef}
               type="password"
               onKeyDown={(e) => {
   if (e.key === "Enter") {
