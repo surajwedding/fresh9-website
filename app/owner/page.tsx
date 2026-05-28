@@ -62,13 +62,13 @@ export default function OwnerPage() {
 
             <input
               type="password"
-              placeholder="Enter 4-digit PIN"
+              placeholder="Enter 6-digit PIN"
               value={pin}
               onChange={(e) =>
                 setPin(e.target.value)
               }
               className="w-full border border-gray-200 rounded-2xl px-5 py-4 text-center text-xl outline-none focus:ring-2 focus:ring-green-500"
-              maxLength={4}
+              maxLength={6}
             />
 
             {error && (
