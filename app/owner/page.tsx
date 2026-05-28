@@ -2,8 +2,7 @@
 
 import {
   useEffect,
-  useState,
-  useRef
+  useState
 } from "react";
 
 export default function OwnerPage() {
@@ -18,8 +17,6 @@ export default function OwnerPage() {
 const [searchTerm, setSearchTerm] =
   useState("");
 
-const pinInputRef =
-  useRef<HTMLInputElement>(null);
 
   const correctPin = "786614";
 
@@ -72,7 +69,14 @@ const pinInputRef =
             </p>
 
             <input
-  ref={pinInputRef}
+  key="pin-input"
+  ref={(el) => {
+    if (el) {
+      setTimeout(() => {
+        el.focus();
+      }, 500);
+    }
+  }}
   type="password"
   onKeyDown={(e) => {
     if (e.key === "Enter") {
@@ -133,15 +137,7 @@ const pinInputRef =
 
   <button
     onClick={fetchDashboardData}
-    useEffect(() => {
-  if (!accessGranted) {
-    const timer = setTimeout(() => {
-      pinInputRef.current?.focus();
-    }, 300);
-
-    return () => clearTimeout(timer);
-  }
-}, [accessGranted]);
+    
     className="bg-green-600 text-white px-6 py-3 rounded-2xl shadow-md hover:bg-green-700 transition"
   >
     Refresh ↻
