@@ -108,7 +108,7 @@ export default function OwnerPage() {
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
           {/* Header */}
-<div className="flex justify-between items-start mb-8">
+<div className="flex items-start justify-between w-full mb-8">
   
   <div>
     <h1 className="text-4xl font-bold text-green-600">
@@ -126,7 +126,7 @@ export default function OwnerPage() {
 
   <button
     onClick={fetchDashboardData}
-    className="bg-green-600 text-white px-6 py-3 rounded-2xl shadow-md hover:bg-green-700 transition"
+    className="ml-auto bg-green-600 text-white px-6 py-3 rounded-2xl shadow-md hover:bg-green-700 transition"
   >
     Refresh ↻
   </button>
