@@ -106,10 +106,8 @@ export default function OwnerPage() {
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
-        <div className="flex justify-between items-center mb-8">
-          {/* Header */}
-<div className="flex items-start justify-between w-full mb-8">
-  
+<div className="flex w-full items-start justify-between mb-8">
+
   <div>
     <h1 className="text-4xl font-bold text-green-600">
       🌿 Fresh 9 Dashboard
@@ -123,6 +121,17 @@ export default function OwnerPage() {
       Fresh Before 9
     </p>
   </div>
+
+  <div className="flex justify-end flex-1">
+    <button
+      onClick={fetchDashboardData}
+      className="bg-green-600 text-white px-6 py-3 rounded-2xl shadow-md hover:bg-green-700 transition"
+    >
+      Refresh ↻
+    </button>
+  </div>
+
+</div>
 
   <button
     onClick={fetchDashboardData}
