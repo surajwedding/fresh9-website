@@ -103,7 +103,7 @@ export default function OwnerPage() {
   // DASHBOARD
   return (
     <div className="min-h-screen bg-[#f8faf8] p-5">
-      <div className="max-w-7xl mx-auto">
+      <div className="w-full px-2">
 
         {/* Header */}
 <div className="flex w-full items-start justify-between mb-8">
