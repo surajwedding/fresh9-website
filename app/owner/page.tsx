@@ -64,6 +64,11 @@ export default function OwnerPage() {
 
             <input
               type="password"
+              onKeyDown={(e) => {
+  if (e.key === "Enter") {
+    handleAccess();
+  }
+}}
               placeholder="Enter 6-digit PIN"
               value={pin}
               onChange={(e) =>
