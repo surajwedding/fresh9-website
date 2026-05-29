@@ -138,7 +138,7 @@ const [searchTerm, setSearchTerm] =
   <button
     onClick={fetchDashboardData}
     
-    className="bg-green-600 hover:bg-green-700 text-white px-7 py-3 rounded-[22px] shadow-lg transition-all duration-200 hover:scale-105" shadow-lg transition-all duration-200 hover:scale-105"
+    className="bg-green-600 hover:bg-green-700 text-white px-7 py-3 rounded-[22px] shadow-lg transition-all duration-200 hover:scale-105"
   >
     Refresh ↻
   </button>
@@ -187,7 +187,7 @@ const [searchTerm, setSearchTerm] =
 
                 
 
-              <div className="bg-white rounded-[30px] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6">
+              <div className="bg-white rounded-[30px] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6">
                 <p className="text-gray-500">
                   ⚠️ Renewals Due
                 </p>
@@ -291,7 +291,7 @@ const [searchTerm, setSearchTerm] =
     </p>
   )}
 </div>
-              <div className="bg-white rounded-[30px] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6">
+              <div className="bg-white rounded-[30px] shadow-md  hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6">
                 <h2 className="text-2xl font-bold text-green-600 mb-5">
                   💰 Pending Payments
                 </h2>
@@ -323,7 +323,7 @@ const [searchTerm, setSearchTerm] =
           </>
         )}
         {/* Customer Search */}
-<div className="bg-white rounded-[30px] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6 mb-8">
+<div className="bg-white rounded-[30px] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6 mb-16 mt-10">
   <h2 className="text-2xl font-bold text-green-600 mb-5">
     🔍 Search Customer
   </h2>
