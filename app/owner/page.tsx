@@ -120,7 +120,7 @@ const [searchTerm, setSearchTerm] =
       <div className="w-full px-2">
 
         {/* Header */}
-<div className="flex items-start justify-between w-full mb-10 pt-2">
+<div className="flex items-start justify-between w-full mb-8 pt-1">
   <div>
     <h1 className="text-[42px] font-bold text-green-600">
       🌿 Fresh 9 Dashboard
@@ -176,7 +176,7 @@ const [searchTerm, setSearchTerm] =
     🥤 Today's Menu
   </p>
 
-  <h2 className="text-3xl font-bold mt-4 leading-snug">
+  <h2 className="text-2xl md:text-3xl font-bold mt-4 leading-snug">
     {dashboardData?.todayMenu ?? "-"}
   </h2>
 
