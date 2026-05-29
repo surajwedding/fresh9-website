@@ -138,7 +138,7 @@ const [searchTerm, setSearchTerm] =
   <button
     onClick={fetchDashboardData}
     
-    className="bg-green-600 text-white px-6 py-3 rounded-2xl shadow-md hover:bg-green-700 transition"
+    className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-[22px] shadow-lg transition-all duration-200 hover:scale-105"
   >
     Refresh ↻
   </button>
