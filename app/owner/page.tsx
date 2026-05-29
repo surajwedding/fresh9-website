@@ -185,11 +185,7 @@ const [searchTerm, setSearchTerm] =
   </p>
 </div>
 
-                <h2 className="text-2xl font-bold mt-3">
-                  {dashboardData?.todayMenu ??
-                    "-"}
-                </h2>
-              </div>
+                
 
               <div className="bg-white rounded-[30px] shadow-md p-6">
                 <p className="text-gray-500">
