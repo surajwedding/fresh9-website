@@ -58,7 +58,7 @@ const [searchTerm, setSearchTerm] =
   if (!accessGranted) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-green-50 to-white flex items-center justify-center p-5">
-        <div className="bg-white shadow-xl rounded-[32px] p-8 w-full max-w-sm border border-green-100">
+        <div className="bg-white shadow-xl rounded-[32px] p-6 w-full max-w-sm border border-green-100">
           <div className="text-center">
             <h1 className="text-3xl font-bold text-green-600 mb-2">
               🌿 Fresh 9
@@ -171,7 +171,7 @@ const [searchTerm, setSearchTerm] =
                 </h2>
               </div>
 
-              <div className="md:col-span-2 bg-gradient-to-r from-emerald-500 via-green-500 to-green-700 rounded-[30px] shadow-2xl border border-white/10 p-6 text-white">
+              <div className="md:col-span-2 bg-gradient-to-r from-emerald-500 via-green-500 to-green-700 rounded-[36px] shadow-2xl border border-white/10 p-6 text-white">
   <p className="text-green-100 text-lg">
     🥤 Today's Menu
   </p>
