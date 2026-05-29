@@ -122,7 +122,7 @@ const [searchTerm, setSearchTerm] =
         {/* Header */}
 <div className="flex items-start justify-between w-full mb-8">
   <div>
-    <h1 className="text-4xl font-bold text-green-600">
+    <h1 className="text-[42px] font-bold text-green-600">
       🌿 Fresh 9 Dashboard
     </h1>
 
@@ -171,7 +171,7 @@ const [searchTerm, setSearchTerm] =
                 </h2>
               </div>
 
-              <div className="md:col-span-2 bg-gradient-to-r from-emerald-500 to-green-600 rounded-[30px] shadow-md p-6 text-white">
+              <div className="md:col-span-2 bg-gradient-to-r from-emerald-500 via-green-500 to-green-700 rounded-[30px] shadow-2xl border border-white/10 p-6 text-white">
   <p className="text-green-100 text-lg">
     🥤 Today's Menu
   </p>
