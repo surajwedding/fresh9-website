@@ -151,7 +151,7 @@ const [searchTerm, setSearchTerm] =
             {/* Top Cards */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
 
-              <div className="bg-white rounded-[30px] shadow-md p-6">
+              <div className="bg-white rounded-[30px] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6">
                 <p className="text-gray-500">
                   👥 Active Customers
                 </p>
@@ -161,7 +161,7 @@ const [searchTerm, setSearchTerm] =
                 </h2>
               </div>
 
-              <div className="bg-white rounded-[30px] shadow-md p-6">
+              <div className="bg-white rounded-[30px] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6">
                 <p className="text-gray-500">
                   📦 Today's Deliveries
                 </p>
@@ -187,7 +187,7 @@ const [searchTerm, setSearchTerm] =
 
                 
 
-              <div className="bg-white rounded-[30px] shadow-md p-6">
+              <div className="bg-white rounded-[30px] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6">
                 <p className="text-gray-500">
                   ⚠️ Renewals Due
                 </p>
@@ -202,7 +202,7 @@ const [searchTerm, setSearchTerm] =
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-8">
 
               {/* Today's Prep */}
-              <div className="bg-white rounded-[30px] shadow-md p-6">
+              <div className="bg-white rounded-[30px] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6">
                 <h2 className="text-2xl font-bold text-green-600 mb-5">
                   🌿 Today's Prep
                 </h2>
@@ -229,7 +229,7 @@ const [searchTerm, setSearchTerm] =
               </div>
 
               {/* Delivery By Area */}
-              <div className="bg-white rounded-[30px] shadow-md p-6">
+              <div className="bg-white rounded-[30px] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6">
                 <h2 className="text-2xl font-bold text-green-600 mb-5">
                   🚚 Delivery By Area
                 </h2>
@@ -259,7 +259,7 @@ const [searchTerm, setSearchTerm] =
 
               {/* Pending Payments */}
               {/* Special Notes */}
-<div className="bg-white rounded-[30px] shadow-md p-6 mt-5">
+<div className="bg-white rounded-[30px] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6 mt-5">
   <h2 className="text-2xl font-bold text-green-600 mb-5">
     📝 Special Notes
   </h2>
@@ -291,7 +291,7 @@ const [searchTerm, setSearchTerm] =
     </p>
   )}
 </div>
-              <div className="bg-white rounded-[30px] shadow-md p-6">
+              <div className="bg-white rounded-[30px] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6">
                 <h2 className="text-2xl font-bold text-green-600 mb-5">
                   💰 Pending Payments
                 </h2>
@@ -323,7 +323,7 @@ const [searchTerm, setSearchTerm] =
           </>
         )}
         {/* Customer Search */}
-<div className="bg-white rounded-[30px] shadow-md p-6 mb-8">
+<div className="bg-white rounded-[30px] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6 mb-8">
   <h2 className="text-2xl font-bold text-green-600 mb-5">
     🔍 Search Customer
   </h2>
