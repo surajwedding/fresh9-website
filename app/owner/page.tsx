@@ -149,7 +149,7 @@ const [searchTerm, setSearchTerm] =
         ) : (
           <>
             {/* Top Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-5">
 
               <div className="bg-white rounded-[30px] shadow-md p-6">
                 <p className="text-gray-500">
@@ -171,10 +171,19 @@ const [searchTerm, setSearchTerm] =
                 </h2>
               </div>
 
-              <div className="bg-white rounded-[30px] shadow-md p-6">
-                <p className="text-gray-500">
-                  🥤 Today's Menu
-                </p>
+              <div className="md:col-span-2 bg-gradient-to-r from-green-500 to-green-600 rounded-[30px] shadow-md p-8 text-white">
+  <p className="text-green-100 text-lg">
+    🥤 Today's Menu
+  </p>
+
+  <h2 className="text-3xl font-bold mt-4 leading-snug">
+    {dashboardData?.todayMenu ?? "-"}
+  </h2>
+
+  <p className="mt-4 text-green-100">
+    Fresh Before 9 🌿
+  </p>
+</div>
 
                 <h2 className="text-2xl font-bold mt-3">
                   {dashboardData?.todayMenu ??
