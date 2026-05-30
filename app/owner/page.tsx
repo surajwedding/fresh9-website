@@ -49,7 +49,22 @@ const [customerError, setCustomerError] =
 
   
   const fetchDashboardData = async () => {
-  return;
+  try {
+  setLoading(true);
+
+  const response =
+    await fetch(API_URL);
+
+  const data =
+    await response.json();
+
+  setDashboardData(data);
+
+} catch (error) {
+  console.error(error);
+} finally {
+  setLoading(false);
+}
 };
 
 const saveCustomer = async () => {
