@@ -2,6 +2,7 @@
 
 import {
   useEffect,
+  useRef,
   useState
 } from "react";
 
@@ -39,6 +40,8 @@ const [customerSuccess, setCustomerSuccess] =
 
 const [customerError, setCustomerError] =
   useState("");
+  const pinInputRef =
+  useRef<HTMLInputElement>(null);
   const correctPin = "786614";
 
   const API_URL =
@@ -132,6 +135,11 @@ const saveCustomer = async () => {
       fetchDashboardData();
     }
   }, [accessGranted]);
+  useEffect(() => {
+  if (!accessGranted) {
+    pinInputRef.current?.focus();
+  }
+}, [accessGranted]);
 
   const handleAccess = () => {
     if (pin === correctPin) {
@@ -157,6 +165,8 @@ const saveCustomer = async () => {
             </p>
 
             <input
+  
+  ref={pinInputRef}
   key="pin-input"
   type="password"
   placeholder="Enter 6-digit PIN"
