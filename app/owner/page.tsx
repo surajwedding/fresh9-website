@@ -16,27 +16,79 @@ export default function OwnerPage() {
 
 const [searchTerm, setSearchTerm] =
   useState("");
+const [showAddCustomer, setShowAddCustomer] =
+  useState(false);
+const [newCustomer, setNewCustomer] =
+  useState({
+    name: "",
+    phone: "",
+    address: "",
+    landmark: "",
+    area: "",
+    plan: "",
+    startDate: "",
+    deliveryNotes: "",
+    specialNotes: "",
+  });
 
+const [savingCustomer, setSavingCustomer] =
+  useState(false);
 
+const [customerSuccess, setCustomerSuccess] =
+  useState("");
+
+const [customerError, setCustomerError] =
+  useState("");
   const correctPin = "786614";
 
   const API_URL =
     "https://script.google.com/macros/s/AKfycbw-PtFt3qW36FokhDYxGMqJSWEoRlZQxKsOvPh6vJtZuAsSkB1d3gnWGU3F4tZmCm-b/exec";
 
   const fetchDashboardData = async () => {
-    try {
-      setLoading(true);
+  try {
+    // fetch code
+  } catch (error) {
+    console.error(error);
+  }
+};
 
-      const response = await fetch(API_URL);
-      const data = await response.json();
+const saveCustomer = async () => {
+  alert("Button Working");
+  if (
+    !newCustomer.name ||
+    !newCustomer.phone ||
+    !newCustomer.address ||
+    !newCustomer.area ||
+    !newCustomer.plan ||
+    !newCustomer.startDate
+  ) {
+    setCustomerError(
+      "⚠️ Please fill required fields"
+    );
+    return;
+  }
 
-      setDashboardData(data);
-    } catch (err) {
-      console.error("Dashboard fetch error:", err);
-    } finally {
-      setLoading(false);
-    }
-  };
+  try {
+    setSavingCustomer(true);
+    setCustomerError("");
+
+    await fetch(API_URL, {
+      method: "POST",
+      body: JSON.stringify(newCustomer),
+    });
+
+    setCustomerSuccess(
+      "✅ Customer Added Successfully"
+    );
+
+  } catch (error) {
+    setCustomerError(
+      "❌ Failed to save customer"
+    );
+  } finally {
+    setSavingCustomer(false);
+  }
+};
 
   
   useEffect(() => {
@@ -134,7 +186,7 @@ const [searchTerm, setSearchTerm] =
       Fresh Before 9
     </p>
   </div>
-
+<div className="flex items-center gap-3"></div>
   <button
     onClick={fetchDashboardData}
     
@@ -142,6 +194,12 @@ const [searchTerm, setSearchTerm] =
   >
     Refresh ↻
   </button>
+  <button
+  onClick={() => setShowAddCustomer(true)}
+  className="bg-black text-white px-7 py-3 rounded-[22px] shadow-lg transition-all duration-200 hover:scale-105 ml-3"
+>
+  ➕ Add Customer
+</button>
 </div>
 
         {loading ? (
@@ -399,6 +457,162 @@ dashboardData?.customerData
             )}
   </div>
 </div>
+{showAddCustomer && (
+  <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-5">
+
+    <div className="bg-white rounded-[32px] shadow-2xl p-8 w-full max-w-2xl">
+
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-3xl font-bold text-green-600">
+          ➕ Add Customer
+        </h2>
+
+        <button
+          onClick={() =>
+            setShowAddCustomer(false)
+          }
+          className="text-gray-500 text-2xl"
+        >
+          ✕
+        </button>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <input
+  placeholder="Customer Name"
+  value={newCustomer.name}
+  onChange={(e) =>
+    setNewCustomer({
+      ...newCustomer,
+      name: e.target.value,
+    })
+  }
+  className="border rounded-2xl px-5 py-4"
+/>
+        
+
+        <input
+  placeholder="Phone Number"
+  value={newCustomer.phone}
+  onChange={(e) =>
+    setNewCustomer({
+      ...newCustomer,
+      phone: e.target.value.replace(/\D/g, ""),
+    })
+  }
+  className="border rounded-2xl px-5 py-4"
+/>
+        
+
+        <input
+  placeholder="Address"
+  value={newCustomer.address}
+  onChange={(e) =>
+    setNewCustomer({
+      ...newCustomer,
+      address: e.target.value,
+    })
+  }
+  className="border rounded-2xl px-5 py-4 md:col-span-2"
+/>
+        
+
+        <input
+  placeholder="Landmark"
+  value={newCustomer.landmark}
+  onChange={(e) =>
+    setNewCustomer({
+      ...newCustomer,
+      landmark: e.target.value,
+    })
+  }
+  className="border rounded-2xl px-5 py-4"
+/>
+        
+
+        <input
+  placeholder="Area"
+  value={newCustomer.area}
+  onChange={(e) =>
+    setNewCustomer({
+      ...newCustomer,
+      area: e.target.value,
+    })
+  }
+  className="border rounded-2xl px-5 py-4"
+/>
+
+        <select
+  value={newCustomer.plan}
+  onChange={(e) =>
+    setNewCustomer({
+      ...newCustomer,
+      plan: e.target.value,
+    })
+  }
+  className="border rounded-2xl px-5 py-4"
+>
+  <option value="">
+    Select Plan
+  </option>
+
+  <option value="15 Day Plan">
+    15 Day Plan
+  </option>
+
+  <option value="30 Day Plan">
+    30 Day Plan
+  </option>
+
+  <option value="Trial Plan">
+    Trial Plan
+  </option>
+
+  <option value="Custom">
+    Custom
+  </option>
+</select>
+
+        <input
+          type="date"
+          className="border rounded-2xl px-5 py-4"
+        />
+
+        <input
+  placeholder="Delivery Notes"
+  value={newCustomer.deliveryNotes}
+  onChange={(e) =>
+    setNewCustomer({
+      ...newCustomer,
+      deliveryNotes: e.target.value,
+    })
+  }
+  className="border rounded-2xl px-5 py-4"
+/>
+
+        <textarea
+  placeholder="Special Notes"
+  value={newCustomer.specialNotes}
+  onChange={(e) =>
+    setNewCustomer({
+      ...newCustomer,
+      specialNotes: e.target.value,
+    })
+  }
+  className="border rounded-2xl px-5 py-4 md:col-span-2"
+></textarea>
+      </div>
+
+      <button
+        className="w-full mt-6 bg-green-600 hover:bg-green-700 text-white py-4 rounded-2xl font-semibold text-lg"
+      >
+        Save Customer
+      </button>
+
+    </div>
+  </div>
+)}
 
       </div>
     </div>
