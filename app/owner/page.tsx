@@ -44,16 +44,13 @@ const [customerError, setCustomerError] =
   const API_URL =
     "https://script.google.com/macros/s/AKfycbw-PtFt3qW36FokhDYxGMqJSWEoRlZQxKsOvPh6vJtZuAsSkB1d3gnWGU3F4tZmCm-b/exec";
 
+  
   const fetchDashboardData = async () => {
-  try {
-    // fetch code
-  } catch (error) {
-    console.error(error);
-  }
+  return;
 };
 
 const saveCustomer = async () => {
-  alert("Button Working");
+  
   if (
     !newCustomer.name ||
     !newCustomer.phone ||
@@ -69,28 +66,67 @@ const saveCustomer = async () => {
   }
 
   try {
+    
     setSavingCustomer(true);
     setCustomerError("");
 
-    await fetch(API_URL, {
-      method: "POST",
-      body: JSON.stringify(newCustomer),
-    });
+    
+    const response =
+  await fetch(API_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type":
+        "application/json",
+    },
+    body: JSON.stringify(
+      newCustomer
+    ),
+  });
+
+  
+      const result = {
+  success: true,
+};
+
+    console.log(result);
 
     setCustomerSuccess(
       "✅ Customer Added Successfully"
     );
 
+    setNewCustomer({
+      name: "",
+      phone: "",
+      address: "",
+      landmark: "",
+      area: "",
+      plan: "",
+      startDate: "",
+      deliveryNotes: "",
+      specialNotes: "",
+    });
+
+    setTimeout(() => {
+      setShowAddCustomer(false);
+      setCustomerSuccess("");
+      fetchDashboardData();
+    }, 1200);
+
   } catch (error) {
+    console.error(error);
+
     setCustomerError(
       "❌ Failed to save customer"
     );
+
   } finally {
     setSavingCustomer(false);
   }
 };
-
   
+  
+    
   useEffect(() => {
     if (accessGranted) {
       fetchDashboardData();
@@ -122,24 +158,17 @@ const saveCustomer = async () => {
 
             <input
   key="pin-input"
-  ref={(el) => {
-    if (el) {
-      setTimeout(() => {
-        el.focus();
-      }, 500);
-    }
-  }}
   type="password"
-  onKeyDown={(e) => {
-    if (e.key === "Enter") {
-      handleAccess();
-    }
-  }}
   placeholder="Enter 6-digit PIN"
   value={pin}
   onChange={(e) =>
     setPin(e.target.value)
   }
+  onKeyDown={(e) => {
+    if (e.key === "Enter") {
+      handleAccess();
+    }
+  }}
   className="w-full border border-gray-200 rounded-2xl px-5 py-4 text-center text-xl outline-none focus:ring-2 focus:ring-green-500"
   maxLength={6}
 />
@@ -175,7 +204,7 @@ const saveCustomer = async () => {
 <div className="flex items-start justify-between w-full mb-8 pt-1">
   <div>
     <h1 className="text-[42px] font-bold text-green-600">
-      🌿 Fresh 9 Dashboard
+      🌿 Fresh 9 Dashboard TEST
     </h1>
 
     <p className="text-lg text-gray-500 mt-2">
@@ -575,9 +604,16 @@ dashboardData?.customerData
 </select>
 
         <input
-          type="date"
-          className="border rounded-2xl px-5 py-4"
-        />
+  type="date"
+  value={newCustomer.startDate}
+  onChange={(e) =>
+    setNewCustomer({
+      ...newCustomer,
+      startDate: e.target.value,
+    })
+  }
+  className="border rounded-2xl px-5 py-4"
+/>
 
         <input
   placeholder="Delivery Notes"
@@ -603,12 +639,30 @@ dashboardData?.customerData
   className="border rounded-2xl px-5 py-4 md:col-span-2"
 ></textarea>
       </div>
+{customerSuccess && (
+  <div className="mt-4 bg-green-100 text-green-700 px-4 py-3 rounded-2xl text-center font-semibold">
+    {customerSuccess}
+  </div>
+)}
 
+{customerError && (
+  <div className="mt-4 bg-red-100 text-red-700 px-4 py-3 rounded-2xl text-center font-semibold">
+    {customerError}
+  </div>
+)}
       <button
-        className="w-full mt-6 bg-green-600 hover:bg-green-700 text-white py-4 rounded-2xl font-semibold text-lg"
-      >
-        Save Customer
-      </button>
+  type="button"
+  onClick={() => {
+  
+    saveCustomer();
+  }}
+  disabled={savingCustomer}
+  className="w-full mt-6 bg-green-600 hover:bg-green-700 text-white py-4 rounded-2xl font-semibold text-lg cursor-pointer"
+>
+  {savingCustomer
+    ? "Saving..."
+    : "Save Customer"}
+</button>
 
     </div>
   </div>
