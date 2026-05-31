@@ -229,7 +229,7 @@ const saveCustomer = async () => {
 <div className="flex items-start justify-between w-full mb-8 pt-1">
   <div>
     <h1 className="text-[42px] font-bold text-green-600">
-      🌿 Fresh 9 Dashboard TEST
+      🌿 Fresh 9 Dashboard
     </h1>
 
     <p className="text-lg text-gray-500 mt-2">
